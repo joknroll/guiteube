@@ -38,6 +38,11 @@
 
   <br/>
 
+<SPAN ID="catrun">
+<MARQUEE STYLE="margin-left:-50px;" BEHAVIOR="alternate" DIRECTION="right" WIDTH="2200" onBounce="bounce();" onmouseover="this.stop()" onmouseout="this.start()"><a href="javascript:alert('miaou miaou, croquette')"><img src="blackcat.gif" id="theImg" !style="filter:progid:DXImageTransform.Microsoft.BasicImage(mirror=1)" border=0></a></MARQUEE>
+</SPAN>
+
+
   <center>
     <tr>
       <td><img src="baby-dance.gif" width="18%" height/></td>
@@ -105,5 +110,22 @@ Si vous souhaitez en savoir plus sur moi et m'embaucher, cliquez sur ce lien : <
   <br/>
   <br/>
   (c) ce site est protégé par les droits d'auteurs, il est enregistré à l'INPI alors tu peux pas faire un clic droit pour piquer mes images!
+
+  <SCRIPT LANGUAGE = "JavaScript">
+
+    x = 0;
+    function bounce() {
+      if (x == 0)
+      {
+        document.getElementById("theImg").src = "b1ackcat.gif";
+        x = 1;
+      }
+      else
+      {
+        document.getElementById("theImg").src = "blackcat.gif";
+        x = 0;
+      }
+    }
+  </SCRIPT
   </body>
 </html>
