@@ -24,6 +24,7 @@
   </script>
 </head>
   <body background="truncbyh.gif">
+    <div id="porc" style="visibilty:hidden;display:none;z-index:2"><img src="porc.gif"/></div>
     <div id="player">
       <audio autoplay loop hidden>
         <source src="sound-1.mp3" type="audio/mpeg">
@@ -72,9 +73,9 @@ Si vous souhaitez en savoir plus sur moi et m'embaucher, cliquez sur ce lien : <
   <center>
 <table>	  
   <tr>
-    <td><img src="baby-kick.gif" width="18%" /></td>
-    <td><img src="line2.gif" width="60%" /></td>
-    <td><img src="baby-kick.gif" width="18%" /></td>
+    <td><img src="baby-kick.gif" width="100%" /></td>
+    <td><img src="line2.gif" width="100%" /></td>
+    <td><img src="baby-kick.gif" width="100%" /></td>
   </tr>
 </table>	  
   </center>
@@ -139,6 +140,24 @@ Si vous souhaitez en savoir plus sur moi et m'embaucher, cliquez sur ce lien : <
         x = 0;
       }
     }
+
+    var myVar;
+
+    function myFunction() {
+      myVar = setInterval(porcON, 3000);
+    }
+
+    function porcON() {
+      document.getElementById("porc").setAttribute('style',"display:block;visibilty:visible;z-index:2");
+      setTimeout(porcOff, 1000);
+    }
+
+    function porcOff(){
+      document.getElementById("porc").setAttribute('style',"display:none;visibilty:hidden;z-index:2");
+    }
+
+    myFunction();
+
   </SCRIPT
   </body>
 </html>
