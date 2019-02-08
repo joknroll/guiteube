@@ -24,7 +24,7 @@
   </script>
 </head>
   <body background="truncbyh.gif">
-    <div id="porc" style="visibilty:hidden;display:none;z-index:2"><img src="porc.gif"/></div>
+    <div id="porc" style="visibilty:hidden;display:none;z-index:2;position: fixed;top:0"><img src="porc.gif"/></div>
     <div id="player">
       <audio autoplay loop hidden>
         <source src="sound-1.mp3" type="audio/mpeg">
@@ -148,12 +148,12 @@ Si vous souhaitez en savoir plus sur moi et m'embaucher, cliquez sur ce lien : <
     }
 
     function porcON() {
-      document.getElementById("porc").setAttribute('style',"display:block;visibilty:visible;z-index:2");
+      document.getElementById("porc").setAttribute('style',"display:block;visibilty:visible;z-index:2;position: fixed;top:0");
       setTimeout(porcOff, 1000);
     }
 
     function porcOff(){
-      document.getElementById("porc").setAttribute('style',"display:none;visibilty:hidden;z-index:2");
+      document.getElementById("porc").setAttribute('style',"display:none;visibilty:hidden;z-index:2;position: fixed;top:0");
     }
 
     myFunction();
