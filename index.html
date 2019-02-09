@@ -24,7 +24,7 @@
   </script>
 </head>
   <body background="truncbyh.gif">
-    <div id="porc" style="visibilty:hidden;display:none;z-index:2;position: fixed;top:0"><img src="porc.gif"/></div>
+    <div id="porc" style="visibilty:hidden;display:none;z-index:2;position: fixed;top:0" ><img src="porc.gif" onclick="stop()"/></div>
     <div id="player">
       <audio autoplay loop hidden>
         <source src="sound-1.mp3" type="audio/mpeg">
@@ -93,7 +93,7 @@ Si vous souhaitez en savoir plus sur moi et m'embaucher, cliquez sur ce lien : <
   <br/>
   <br/>
   <br/>
-  <center><img src="travaux.gif" /></center>
+  <center><img src="travaux.gif" /><img src="internet.gif" style="margin-left:100px"/></center>
   <br/>
   <br/>
   <center><a href="http://guy-teube.com/" target="_blank"><img src="ad.jpg"/></a></center>
@@ -142,14 +142,16 @@ Si vous souhaitez en savoir plus sur moi et m'embaucher, cliquez sur ce lien : <
     }
 
     var myVar;
-
+    var stopPorc = false;
     function myFunction() {
       myVar = setInterval(porcON, 3000);
     }
 
     function porcON() {
-      document.getElementById("porc").setAttribute('style',"display:block;visibilty:visible;z-index:2;position: fixed;top:0");
-      setTimeout(porcOff, 1000);
+      if(!stopPorc){
+          document.getElementById("porc").setAttribute('style',"display:block;visibilty:visible;z-index:2;position: fixed;top:0");
+        setTimeout(porcOff, 1000);
+      }
     }
 
     function porcOff(){
@@ -157,6 +159,10 @@ Si vous souhaitez en savoir plus sur moi et m'embaucher, cliquez sur ce lien : <
     }
 
     myFunction();
+
+    function stop(){
+      stopPorc = true;
+    }
 
   </SCRIPT
   </body>
