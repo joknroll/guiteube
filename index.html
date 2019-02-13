@@ -34,6 +34,8 @@
 
   <center><img src="picasion.com_aJLm.gif" width="600px"/></center> 
   <br/>
+  <center><div id="special"></div></center> 
+  <br/>
 
 <table>
     <tr>  
@@ -144,6 +146,13 @@ Si vous souhaitez en savoir plus sur moi et m'embaucher, cliquez sur ce lien : <
 
   <SCRIPT LANGUAGE = "JavaScript">
 
+    var date = new Date();
+    
+    if(date.getMonth() === 1 && date.getDate() === 14){
+     document.getElementsByTagName("body")[0].setAttribute('style','background-image: url("8.jpg");background-repeat: repeat;');
+     document.getElementById("special").innerHTML = "je suis trop un pur lover, alors j'ai fait un thème special saint valentin";
+    } 
+    
     x = 0;
     function bounce() {
       if (x == 0)
@@ -181,6 +190,6 @@ Si vous souhaitez en savoir plus sur moi et m'embaucher, cliquez sur ce lien : <
       stopPorc = true;
     }
 
-  </SCRIPT
+  </SCRIPT>
   </body>
 </html>
