@@ -61,6 +61,21 @@
 
 
   <center>
+	<script>
+function diffdate(d1,d2){
+var div = 1000*60*60*24; 
+var diff = d2.getTime() - d1.getTime();
+return Math.ceil(diff/div)
+}
+ 
+var Date1 = new Date('2019-02-18');
+var Date2 = new Date('2019-03-18');		
+var diff = diffdate(Date1,Date2,'d');
+if (diff>0) {
+	document.write('Mon copain Maximilien revient à la maison dans ' + diff + ' jours<br/>');
+}
+	</script>
+	  
 <table>
     <tr>
       <td><img src="baby-dance.gif"/></td>
