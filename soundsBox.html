@@ -23,9 +23,24 @@
 		figcaption{
             font-size: 21px;
 		}
+
+        img {
+            border : 10px darkviolet;
+        }
+        img:hover{
+            border : 10px green;
+        }
     </style>
 </head>
 <body>
+
+<script>
+function play(id){
+   var audio = document.getElementById(id);
+   audio.play();
+             }
+</script>
+
 <center><img src="images/baby-dance.gif" height="148px"/><img src="images/bob.gif"/><img src="images/baby-dance.gif" height="148px"/><h1> THE ULTIMATE SOUND BOX </h1></center>
 
 <table>
@@ -94,12 +109,9 @@
             </figure>
         </td>
 		 <td>
-            <figure>
-                <figcaption>Croque des concombres :</figcaption>
-                <audio controls>
-                    <source src="sons/croque-des-concombres.mp3" type="audio/mpeg">
-                </audio>
-            </figure>
+            <img src="images/croque-concombre.png"  onclick="play('croque-des-concombres')">
+            <audio id="croque-des-concombres" src="sons/croque-des-concombres.mp3" ></audio>
+
         </td>
     </tr>
     <tr>
