@@ -1,0 +1,620 @@
+<html>
+<head>
+    <link rel="icon" type="image/png" href="images/dick-favicon.png"/>
+    <title>amazing looper</title>
+
+
+
+<style type="text/css">
+*, *::before, *::after {
+
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+
+}
+
+*:before, *:after {
+
+  content: '';
+
+}
+
+html, body {
+
+  margin: 0px;
+  padding: 0px;
+
+}
+
+body {
+  color: yellow;
+  font-size: 25px;
+  background: darkviolet;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+
+}
+
+div {
+
+  display: block;
+  position: relative;
+
+}
+
+header {
+
+  width: 1300px;
+  height: auto;
+  padding: 50px 0px;
+  margin: 0px auto;
+  position: relative;
+
+}
+
+header label {
+  
+  color: white;
+  font-size: 12px;
+  margin-left: 20px;
+  
+}
+
+header label a {
+  
+  color: #60B5D1;
+  
+}
+
+.container {
+
+  left: 50%;
+  z-index: 0;
+  float: left;
+  width: 1100px;
+  height: auto;
+  margin-left: 100px;
+  max-height: 100vh;
+  position: relative;
+  border: 8px solid #16181C;
+  transform: translateX(-50%);
+
+}
+
+.row {
+
+  float: left;
+  clear: both;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  border-bottom: 8px solid #16181C;
+
+}
+
+.row::before {
+
+  top: 0px;
+  left: -208px;
+  width: 200px;
+  height: 100%;
+  position: absolute;
+  letter-spacing: 1px;
+  border-radius: 2px;
+  background: rgba(0, 0, 0, 0.025);
+  border-right: 8px solid #16181C;
+  box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.65),
+              inset 0px 0px 0px 2px rgba(255, 255, 255, 0.035),
+              inset 0px 5px 20px -10px rgba(255, 255, 255, 0.25),
+              inset 0px -5px 20px -10px black;
+
+}
+
+.row::after {
+
+  top: 15%;
+  left: -198px;
+  width: 172px;
+  height: 70%;
+  z-index: 1;
+  padding: 15px;
+  position: absolute;
+  font-family: 'Open Sans';
+  font-weight: 300;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  font-size: 11px;
+  border-radius: 2px;
+  background: #101114;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 0.035),
+              inset 0px -20px 20px -20px rgba(0, 0, 0, 0.5),
+              inset 0px 20px 20px -20px rgba(255, 255, 255, 0.05);
+
+}
+
+.row:nth-child(1)::after {
+
+  content: 'la-mode';
+
+}
+
+.row:nth-child(2)::after {
+
+  content: 'monsieur-tout-nu';
+
+}
+
+.row:nth-child(3)::after {
+
+  content: 'orang-outan';
+
+}
+
+.row:nth-child(4)::after {
+
+  content: 'gladiateurs';
+
+}
+
+.row:nth-child(5)::after {
+
+  content: 'bat-les-couilles';
+
+}
+
+.sample {
+
+  float: left;
+  border-radius: 2px;
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.025);
+  border-right: 8px solid #16181C;
+  box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.65),
+              inset 0px 0px 0px 2px rgba(255, 255, 255, 0.035),
+              inset 0px 5px 20px -10px rgba(255, 255, 255, 0.25),
+              inset 0px -5px 20px -10px black;
+
+}
+
+.sample:nth-child(8n+6)::after {
+
+  top: 1px;
+  left: 1px;
+  z-index: -1;
+  opacity: 0.05;
+  border-radius: 2px;
+  background: #FF7B5F;
+  position: absolute;
+  width: calc(400% + 22px);
+  height: calc(100% + 0px);
+
+}
+
+.sample::before {
+
+  top: 15%;
+  left: 15%;
+  width: 70%;
+  height: 70%;
+  z-index: 1;
+  position: absolute;
+  border-radius: 2px;
+  background: #101114;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 0.035),
+              inset 0px -20px 20px -20px rgba(0, 0, 0, 0.5),
+              inset 0px 20px 20px -20px rgba(255, 255, 255, 0.05);
+
+}
+
+.sample:active::before,
+.sample:focus::before {
+
+  background: #0C0D0F;
+  box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 0.035),
+              inset 0px 20px 20px -20px rgba(0, 0, 0, 0.5),
+              inset 0px 20px 20px -20px rgba(255, 255, 255, 0.05);
+
+}
+
+.sample.active::before {
+
+  background: #DB6B53;
+  border: 1px solid rgba(255, 255, 255, 0.035);
+  box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.05),
+              inset 0px -20px 20px -20px rgba(0, 0, 0, 0.85),
+              inset 0px 20px 20px -20px rgba(255, 255, 255, 0.05);
+
+}
+
+.sample.active.hit::before {
+
+  background: #DB6B53;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0px 0px 20px 1px #DB7E53,
+              inset 0px 0px 0px 1px rgba(0, 0, 0, 0.05),
+              inset 0px -20px 20px -20px rgba(0, 0, 0, 1),
+              inset 0px 20px 20px -20px rgba(255, 255, 255, 1);
+
+}
+
+.sample.active.disabled.hit::before {
+
+  background: #DBBBB0;
+  border: 1px solid rgba(255, 255, 255, 0.035);
+  box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.05),
+              inset 0px -20px 20px -20px rgba(0, 0, 0, 0.85),
+              inset 0px 20px 20px -20px rgba(255, 255, 255, 0.05);
+
+}
+
+.sample.active.disabled::before {
+
+  opacity: 0.35;
+  background: #DBBBB0;
+
+}
+
+.enable-disable-row {
+
+  top: 50%;
+  left: -60px;
+  width: 14px;
+  height: 14px;
+  outline: none;
+  border: none;
+  z-index: 2;
+  margin-top: -7px;
+  background: #81B55B;
+  position: absolute;
+  border-radius: 50%;
+  box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.5),
+              0px 0px 0px 3px rgba(255, 255, 255, 0.15),
+              0px 0px 0px 4px rgba(0, 0, 0, 0.5),
+              inset 0px 0px 5px -1px white;
+
+}
+
+.enable-disable-row.disabled {
+
+  background: #CF472F;
+
+}
+</style>
+
+</head>
+<body>
+
+
+<center><a href="soundsBox.html" style="color: yellow;"> < To the sound box  </a></center>
+
+<center> <img src="images/construction1.gif" height="100px" /> <img src="images/En_travaux.gif" height="100px" />   </center>
+
+<header>
+  <button id="play-pause" data-playing="false"><i class="fa fa-play"></i></button>
+  <label>This is a javascript experiment created by <a href="http://www.sebastianinman.com" target="new">Sebastian Inman</a></label>
+</header>
+
+<div class="container player"></div>
+<audio id="1" src="sons/la-mode.mp3"></audio>
+<audio id="2" src="sons/monsieur-tout-nu.mp3"></audio>
+<audio id="3" src="sons/orang-outan.mp3"></audio>
+<audio id="4" src="sons/gladiateurs.mp3"></audio>
+<audio id="5" src="sons/bat-les-couilles.mp3"></audio>
+
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script>
+/**
+ * Javascript Drum Machine
+ * @author Sebastian Inman
+ * @version 1.0.0
+ * @desc This is a javascript experiment created
+ * to demonstrate music patterns in the web browser.
+ * I started this project just for fun and intend on
+ * adding more to it and keeping this pen updated.
+ * All drum samples were provided by 99Samples: 
+ * http://99sounds.org/drum-samples/
+ */
+
+(function(DrummerJS, $, undefined) {
+
+    'use strict';
+
+    // ======================================
+    // establish public variables and methods
+    // ======================================
+
+    DrummerJS.title = 'Javascript Drum Machine';
+    DrummerJS.description = 'Create audio loops using drum  samples.'
+    DrummerJS.author = 'Sebastian Inman';
+
+    var $_container = $('.player');
+    var $_containerWidth  = $_container.width();
+    var $_containerHeight = $_container.height();
+
+    var $_setBPM = $('#set-bpm');
+    var $_playPauseBtn = $('#play-pause');
+    var $_setSamplesBtn = $('#set-samples');
+
+    var $_toggleRowBtn;
+    var $_sampleBtn;
+
+    var _urlHash;
+
+    var _sampleList = 'default';
+
+    var _totalSteps = 16;
+    var _totalRows  = 5;
+
+    var _currentStep = 1;
+
+    var _sampleRate = 44100;
+    var _minuteInSeconds = 60;
+    var _beatsPerMinute =  90;
+
+    var _stepDelay;
+
+    var calculateBPM = function() {
+
+      _stepDelay = Math.round(((_sampleRate * _minuteInSeconds) / (_beatsPerMinute * _totalSteps)) / _totalSteps);
+
+      return _stepDelay;
+
+    };
+
+    // =======================================================
+    // creates namespace provider which helps isolate
+    // implementated code from the global namespace, providing
+    // a single point of access for functions and methods.
+    // =======================================================
+    // this keeps the code more organized and allows the code
+    // to be combined into more logical sections.
+    // =======================================================
+
+    DrummerJS.handler = (function() {
+
+        function _handler() {
+
+            /**
+             * @var _this
+             * @desc in a 'non-strict' environment, 'this' is bound to
+             *       the global scope (if it hasn't been bound to anything else).
+             *       in 'strict' mode it is set to undefined. we store it in a
+             *       variable to avoid scope conflicts.
+             */
+
+            var _this = this;
+
+            var _isPlaying;
+
+            this.playPauseHandler = function(button) {
+
+              calculateBPM();
+
+              var status = button.data('playing');
+
+              if(status === 'true') {
+
+                button.data('playing', 'false').html('<i class="fa fa-play"></i>');
+
+                _this.stopAudio();
+
+              }else {
+
+                button.data('playing', 'true').html('<i class="fa fa-pause"></i>');
+
+                _this.startAudio();
+
+              }
+
+            };
+
+            this.pageLoad = function() {
+
+              if(!window.location.hash) {
+
+                window.location.hash = '!/';
+
+              }
+
+              _urlHash = window.location.hash.split('/');
+
+            };
+
+            this.toggleSample = function(sample) {
+
+              sample.toggleClass('active');
+
+            };
+
+            this.toggleSampleHandler = function() {
+
+              $('.sample').on('click', function() {
+
+                _this.toggleSample($(this));
+
+              });
+
+            };
+
+            this.updateSampleList = function(samples) {
+
+              _sampleList = samples;
+
+              console.log(_sampleList);
+
+            };
+
+            this.updateBPM = function(bpm) {
+
+              _beatsPerMinute = bpm;
+
+              calculateBPM();
+
+              _this.stopAudio();
+              _this.startAudio();
+
+            };
+
+            this.stopAudio = function() {
+
+              $_sampleBtn.removeClass('hit');
+
+              clearInterval(_isPlaying);
+
+            };
+
+            this.startAudio = function() {
+
+              _isPlaying = window.setInterval(function() {
+
+                  _this.playAudio()
+
+                }, _stepDelay);
+
+            }
+
+            this.playAudio = function() {
+
+              if(_currentStep < _totalSteps) {
+
+                _currentStep++;
+
+              }else if(_currentStep >= _totalSteps){
+
+                _currentStep = 1;
+
+              }
+
+              $_sampleBtn.removeClass('hit');
+
+              for(var i = 1; i < _totalRows + 1; i++) {
+
+                var $_newSample = $('.sample[data-row="' + i + '"][data-column="' + _currentStep + '"]');
+
+                if($_newSample.hasClass('active')) {
+
+                  $('#' + i)[0].currentTime = 0;
+
+                  if(!$_newSample.hasClass('disabled')) {
+
+                    $('#' + i)[0].play();
+
+                  }else{
+
+                    $('#' + i)[0].pause();
+
+                  }
+
+                  $_newSample.addClass('hit');
+
+                }
+
+              }
+
+            };
+
+            this.createMatrix = function(rows, columns) {
+
+              var sampleSize  = $_containerWidth / columns;
+
+              for(var i = 1; i < rows + 1; i++) {
+
+                $('<div class="row" id="row-' + i + '"></div>').appendTo('.container');
+
+                $('<button class="enable-disable-row" id="toggle-row-' + i + '"></button>').prependTo('#row-' + i);
+
+                for(var k = 1; k < columns + 1; k++) {
+
+                  $('<div class="column sample" data-row="' + i + '" data-column="' + k + '" style="height:' + (sampleSize - 8) + 'px;width:' + sampleSize + 'px"></div>').appendTo('#row-' + i);
+
+                }
+
+              }
+
+              $_toggleRowBtn = $('.enable-disable-row');
+              $_sampleBtn = $('.sample');
+
+              calculateBPM();
+
+            };
+
+            this.toggleRowBtnHandler = function(button) {
+
+              button.toggleClass('disabled');
+
+              var rowID = button.attr('id').replace('toggle-row-', '');
+
+              $('.sample[data-row="' + rowID + '"]').toggleClass('disabled');
+
+            };
+
+
+            /**
+             * @function init()
+             * @desc initiates the DrummerJS global function
+             *       creating an active instance of the script on the
+             *       current site.
+             */
+
+            this.init = function() {
+
+                // run functions here
+
+                _this.pageLoad();
+
+                _this.createMatrix(_totalRows, _totalSteps);
+                _this.toggleSampleHandler();
+
+                $_playPauseBtn.on('click', function() {
+
+                  _this.playPauseHandler($(this));
+
+                });
+
+                $_toggleRowBtn.on('click', function() {
+
+                  _this.toggleRowBtnHandler($(this));
+
+                });
+
+                $_setBPM.on('change', function() {
+
+                  _this.updateBPM($(this).val());
+
+                });
+
+                $_setSamplesBtn.on('change', function() {
+
+                  _this.updateSampleList($(this).val());
+
+                });
+
+                // start the drum machine
+              
+                $_playPauseBtn.click();
+
+                return this;
+
+            };
+
+            // initiate the script!
+            return this.init();
+
+        }
+
+        // create a new handler object
+        return new _handler();
+
+    }());
+
+// assign DrummerJS to the global namespace
+}(window.DrummerJS = window.DrummerJS || {}, jQuery));
+
+</script>
+
+</body>
+</html>
+
+
