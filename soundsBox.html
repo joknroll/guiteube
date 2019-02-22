@@ -51,6 +51,7 @@
             icon.classList.add("playing");
             document.querySelector("#" + id).addEventListener("ended", () => {
                 icon.classList.remove("playing");
+                sounds.set(id, false);
             }, false);
         } else {
             audio.pause();
