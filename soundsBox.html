@@ -11,155 +11,111 @@
             cursor: url(images/dick_cursor.png), auto;
         }
 
-        table {
-            width: 100%;
+        audio {
+            height: 30px;
+            width: 250px;
         }
-		
-		audio{
-			height: 30px;
-			width: 250px;
-		}
-		
-		figcaption{
-            font-size: 21px;
-		}
 
-        table img {
-            border : 10px darkviolet solid;
+        .row {
+            padding: 25px 25px 5% 5%;
+            display: flex;
+            flex-wrap: wrap;
         }
-        table img:hover{
-            border : 10px green solid;
+
+        .iconSound {
+            margin: 10px;
+        }
+
+        .playing {
+            box-sizing: border-box;
+            border: 10px yellow solid;
+        }
+
+        .iconSound:hover {
+            box-sizing: border-box;
+            border: 10px yellow solid;
         }
     </style>
 </head>
 <body>
 
 <script>
-function play(id){
-   var audio = document.getElementById(id);
-   audio.play();
-             }
+    const sounds = new Map();
+
+    function play(id) {
+        const audio = document.getElementById(id);
+        if (!sounds.get(id)) {
+            audio.play();
+            sounds.set(id, true);
+            const icon = document.getElementById(id + 'Icon');
+            icon.classList.add("playing");
+            document.querySelector("#" + id).addEventListener("ended", () => {
+                icon.classList.remove("playing");
+            }, false);
+        } else {
+            audio.pause();
+            sounds.set(id, false);
+        }
+    }
+
 </script>
 
 <div style="width:100%">
-    <a href="index.html" style="text-align:left;display:block;float:left"> < To the guiteub </a>   
-    <a href="amazingLoop.html" style="text-align:right;display:block">  To the amazing loop machine > </a>
+    <a href="index.html" style="text-align:left;display:block;float:left"> < To the guiteub </a>
+    <a href="amazingLoop.html" style="text-align:right;display:block"> To the amazing loop machine > </a>
 </div>
 
-<center><img src="images/baby-dance.gif" height="148px"/><img src="images/bob.gif"/><img src="images/baby-dance.gif" height="148px"/><h1> THE ULTIMATE SOUND BOX </h1></center>
+<center><img src="images/baby-dance.gif" height="148px"/><img src="images/bob.gif"/><img src="images/baby-dance.gif"
+                                                                                         height="148px"/>
+    <h1> THE ULTIMATE SOUND BOX </h1></center>
 
-<table>
-    <tr>
-        <td>
-            <!--
-            <figure>
-                <figcaption>FREDgasme :</figcaption>
-                <audio controls>
-                    <source src="sons/fred.mp3" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                </audio>
-            </figure>
-            -->
-            <center>
-                <img src="images/fred.jpg"  onclick="play('fred')" width="150px" height="150px">
-                <audio id="fred" src="sons/fred.mp3" ></audio>
-            </center>
-        </td>
-        <td>
-            <center>
-                <img src="images/donald.jpg"  onclick="play('donald')" width="150px" height="150px">
-                <audio id="donald" src="sons/donald-duck.wav" ></audio>
-            </center>
-        </td>
-        <td>
-            <center>
-                <img src="images/gladiateur.jpg"  onclick="play('gladiateur')" width="150px" height="150px">
-                <audio id="gladiateur" src="sons/gladiateurs.mp3" ></audio>
-            </center>
-        </td>
-		<td>
-            <center>
-                <img src="images/monsieur.jpg"  onclick="play('monsieur')" width="150px" height="150px">
-                <audio id="monsieur" src="sons/monsieur-tout-nu.mp3" ></audio>
-            </center>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <center>
-                <img src="images/babyshark.jpg"  onclick="play('babyshark')" width="150px" height="150px">
-                <audio id="babyshark" src="sons/babyShark.mp3" ></audio>
-            </center>
+<div class="row">
 
-        </td>
-        <td>
-            <center>
-                <img src="images/orangoutan.jpg"  onclick="play('orangoutan')" width="150px" height="150px">
-                <audio id="orangoutan" src="sons/orang-outan.mp3" ></audio>
-            </center>
-        </td>
-        <td>
-            <center>
-                <img src="images/garison.jpg"  onclick="play('garison')" width="150px" height="150px">
-                <audio id="garison" src="sons/gogoles.mp3" ></audio>
-            </center>
-        </td>
-		 <td>
-             <center>
-                 <img src="images/croque-concombre.png"  onclick="play('croque-des-concombres')" width="150px" height="150px">
-                 <audio id="croque-des-concombres" src="sons/croque-des-concombres.mp3" ></audio>
-             </center>
-        </td>
-    </tr>
-    <tr>
-		<td>
-            <center>
-                <img src="images/magazine.PNG"  onclick="play('magazine')" width="150px" height="150px">
-                <audio id="magazine" src="sons/magazine.mp3" ></audio>
-            </center>
-        </td>
-        <td>
-            <center>
-                <img src="images/mode.PNG"  onclick="play('mode')" width="150px" height="150px">
-                <audio id="mode" src="sons/la-mode.mp3" ></audio>
-            </center>
-        </td>
-        <td>
-            <center>
-                <img src="images/balais.jpg"  onclick="play('balais')" width="150px" height="150px">
-                <audio id="balais" src="sons/bat-les-couilles.mp3" ></audio>
-            </center>
-        </td>
-        <td>
-            <center>
-                <img src="images/alain.PNG"  onclick="play('alain')" width="150px" height="150px">
-                <audio id="alain" src="sons/jai-faim-plus-que-alain.mp3" ></audio>
-            </center>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <center>
+    <img class="iconSound" id="fredIcon" src="images/fred.jpg" onclick="play('fred')" width="150px" height="150px">
+    <audio id="fred" src="sons/fred.mp3"></audio>
 
-            </center>
-        </td>
-        <td>
-            <center>
+    <img class="iconSound" id="donaldIcon" src="images/donald.jpg" onclick="play('donald')" width="150px" height="150px">
+    <audio id="donald" src="sons/donald-duck.wav"></audio>
 
-            </center>
-        </td>
-        <td>
-            <center>
+    <img class="iconSound" id="gladiateurIcon" src="images/gladiateur.jpg" onclick="play('gladiateur')" width="150px"
+         height="150px">
+    <audio id="gladiateur" src="sons/gladiateurs.mp3"></audio>
 
-            </center>
-        </td>
-        <td>
-            <center>
+    <img class="iconSound" id="monsieurIcon" src="images/monsieur.jpg" onclick="play('monsieur')" width="150px" height="150px">
+    <audio id="monsieur" src="sons/monsieur-tout-nu.mp3"></audio>
 
-            </center>
-        </td>
-    </tr>
-</table>
-<center><img src="images/will.gif" width="600px" height="500px"/><img src="images/wolf.gif" height="500px" width="600px"/></center>
+
+    <img class="iconSound" id="babysharkIcon" src="images/babyshark.jpg" onclick="play('babyshark')" width="150px" height="150px">
+    <audio id="babyshark" src="sons/babyShark.mp3"></audio>
+
+    <img class="iconSound" id="orangoutanIcon" src="images/orangoutan.jpg" onclick="play('orangoutan')" width="150px"
+         height="150px">
+    <audio id="orangoutan" src="sons/orang-outan.mp3"></audio>
+
+    <img class="iconSound" id="garisonIcon" src="images/garison.jpg" onclick="play('garison')" width="150px" height="150px">
+    <audio id="garison" src="sons/gogoles.mp3"></audio>
+
+    <img class="iconSound" id="croque-des-concombresIcon" src="images/croque-concombre.png"
+         onclick="play('croque-des-concombres')"
+         width="150px" height="150px">
+    <audio id="croque-des-concombres" src="sons/croque-des-concombres.mp3"></audio>
+
+    <img class="iconSound" id="magazineIcon" src="images/magazine.PNG" onclick="play('magazine')" width="150px" height="150px">
+    <audio id="magazine" src="sons/magazine.mp3"></audio>
+
+
+    <img class="iconSound" id="modeIcon" src="images/mode.PNG" onclick="play('mode')" width="150px" height="150px">
+    <audio id="mode" src="sons/la-mode.mp3"></audio>
+
+    <img class="iconSound" id="balaisIcon" src="images/balais.jpg" onclick="play('balais')" width="150px" height="150px">
+    <audio id="balais" src="sons/bat-les-couilles.mp3"></audio>
+
+
+    <img class="iconSound" id="alainIcon" src="images/alain.PNG" onclick="play('alain')" width="150px" height="150px">
+    <audio id="alain" src="sons/jai-faim-plus-que-alain.mp3"></audio>
+
+</div>
+<img src="images/will.gif" width="600px" height="500px"/><img src="images/wolf.gif" height="500px" width="600px"/>
+
 </body>
 </html>
