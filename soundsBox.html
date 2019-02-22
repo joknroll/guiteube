@@ -44,16 +44,17 @@
 
     function play(id) {
         const audio = document.getElementById(id);
+        const icon = document.getElementById(id + 'Icon');
         if (!sounds.get(id)) {
             audio.play();
             sounds.set(id, true);
-            const icon = document.getElementById(id + 'Icon');
             icon.classList.add("playing");
             document.querySelector("#" + id).addEventListener("ended", () => {
                 icon.classList.remove("playing");
             }, false);
         } else {
             audio.pause();
+            icon.classList.remove("playing");
             sounds.set(id, false);
         }
     }
