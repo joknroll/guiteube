@@ -24,6 +24,8 @@
 
         .iconSound {
             margin: 10px;
+            width: 150px;
+            height: 150px;
         }
 
         .playing {
@@ -49,7 +51,7 @@
             audio.play();
             sounds.set(id, true);
             icon.classList.add("playing");
-            document.querySelector("#" + id).addEventListener("ended", () => {
+            document.querySelector("#" + id).addEventListener("ended", function () {
                 icon.classList.remove("playing");
                 sounds.set(id, false);
             }, false);
@@ -73,84 +75,90 @@
 
 <div class="row">
 
-    <img class="iconSound" id="fredIcon" src="images/fred.jpg" onclick="play('fred')" width="150px" height="150px">
+    <img class="iconSound" id="fredIcon" src="images/fred.jpg" onclick="play('fred')">
     <audio id="fred" src="sons/gasm.mp3"></audio>
 
-    <img class="iconSound" id="donaldIcon" src="images/donald.jpg" onclick="play('donald')" width="150px" height="150px">
+    <img class="iconSound" id="donaldIcon" src="images/donald.jpg" onclick="play('donald')">
     <audio id="donald" src="sons/donald-duck.wav"></audio>
 
     <img class="iconSound" id="gladiateurIcon" src="images/gladiateur.jpg" onclick="play('gladiateur')" width="150px"
          height="150px">
     <audio id="gladiateur" src="sons/gladiateurs.mp3"></audio>
 
-    <img class="iconSound" id="monsieurIcon" src="images/monsieur.jpg" onclick="play('monsieur')" width="150px" height="150px">
+    <img class="iconSound" id="monsieurIcon" src="images/monsieur.jpg" onclick="play('monsieur')">
     <audio id="monsieur" src="sons/monsieur-tout-nu.mp3"></audio>
 
 
-    <img class="iconSound" id="babysharkIcon" src="images/babyshark.jpg" onclick="play('babyshark')" width="150px" height="150px">
+    <img class="iconSound" id="babysharkIcon" src="images/babyshark.jpg" onclick="play('babyshark')">
     <audio id="babyshark" src="sons/babyShark.mp3"></audio>
 
     <img class="iconSound" id="orangoutanIcon" src="images/orangoutan.jpg" onclick="play('orangoutan')" width="150px"
          height="150px">
     <audio id="orangoutan" src="sons/oranoutan.mp3"></audio>
 
-    <img class="iconSound" id="garisonIcon" src="images/garison.jpg" onclick="play('garison')" width="150px" height="150px">
+    <img class="iconSound" id="garisonIcon" src="images/garison.jpg" onclick="play('garison')">
     <audio id="garison" src="sons/gogoles.mp3"></audio>
 
     <img class="iconSound" id="croque-des-concombresIcon" src="images/croque-concombre.png"
          onclick="play('croque-des-concombres')"
-         width="150px" height="150px">
+    >
     <audio id="croque-des-concombres" src="sons/croque-des-concombres.mp3"></audio>
 
-    <img class="iconSound" id="magazineIcon" src="images/magazine.PNG" onclick="play('magazine')" width="150px" height="150px">
+    <img class="iconSound" id="magazineIcon" src="images/magazine.PNG" onclick="play('magazine')">
     <audio id="magazine" src="sons/magazine.mp3"></audio>
 
 
-    <img class="iconSound" id="modeIcon" src="images/mode.PNG" onclick="play('mode')" width="150px" height="150px">
+    <img class="iconSound" id="modeIcon" src="images/mode.PNG" onclick="play('mode')">
     <audio id="mode" src="sons/la-mode.mp3"></audio>
 
-    <img class="iconSound" id="balaisIcon" src="images/balais.jpg" onclick="play('balais')" width="150px" height="150px">
+    <img class="iconSound" id="balaisIcon" src="images/balais.jpg" onclick="play('balais')">
     <audio id="balais" src="sons/bat-les-couilles.mp3"></audio>
 
-
-    <img class="iconSound" id="alainIcon" src="images/alain.PNG" onclick="play('alain')" width="150px" height="150px">
+    <img class="iconSound" id="alainIcon" src="images/alain.PNG" onclick="play('alain')">
     <audio id="alain" src="sons/jai-faim-plus-que-alain.mp3"></audio>
 
-    <img class="iconSound" id="bananeIcon" src="images/banane.png" onclick="play('banane')" width="150px" height="150px">
+    <img class="iconSound" id="bananeIcon" src="images/banane.png" onclick="play('banane')">
     <audio id="banane" src="sons/banane.mp3"></audio>
-    
-    <img class="iconSound" id="margeIcon" src="images/marge.jpg" onclick="play('marge')" width="150px" height="150px">
+
+    <img class="iconSound" id="margeIcon" src="images/marge.jpg" onclick="play('marge')">
     <audio id="marge" src="sons/marge.mp3"></audio>
 
-    <img class="iconSound" id="amenoIcon" src="images/ameno.jpg" onclick="play('ameno')" width="150px" height="150px">
+    <img class="iconSound" id="amenoIcon" src="images/ameno.jpg" onclick="play('ameno')">
     <audio id="ameno" src="sons/ameno.mp3"></audio>
 
-    <img class="iconSound" id="goatIcon" src="images/goat.jpg" onclick="play('goat')" width="150px" height="150px">
+    <img class="iconSound" id="goatIcon" src="images/goat.jpg" onclick="play('goat')">
     <audio id="goat" src="sons/goat.mp3"></audio>
 
-    <img class="iconSound" id="nyanIcon" src="images/nyan.jpeg" onclick="play('nyan')" width="150px" height="150px">
-    <audio id="nyan" src="sons/nyancat.mp3"></audio> 
+    <img class="iconSound" id="nyanIcon" src="images/nyan.jpeg" onclick="play('nyan')">
+    <audio id="nyan" src="sons/nyancat.mp3"></audio>
 
-    <img class="iconSound" id="republiqueIcon" src="images/republique.jpg" onclick="play('republique')" width="150px" height="150px">
-    <audio id="republique" src="sons/la-republique-cest-moi.mp3"></audio>  
+    <img class="iconSound" id="republiqueIcon" src="images/republique.jpg" onclick="play('republique')">
+    <audio id="republique" src="sons/la-republique-cest-moi.mp3"></audio>
+
+    <img class="iconSound" id="timmyIcon" src="images/timmy.jpg" onclick="play('timmy')">
+    <audio id="timmy" src="sons/timmy.mp3"></audio>
     
-    <img class="iconSound" id="timmyIcon" src="images/timmy.jpg" onclick="play('timmy')" width="150px" height="150px">
-    <audio id="timmy" src="sons/timmy.mp3"></audio>  
+    <img class="iconSound" id="timmy2Icon" src="images/timmy2.jpg" onclick="play('timmy2')">
+    <audio id="timmy2" src="sons/timmy2.mp3"></audio>
 
-
-    <img class="iconSound" id="timmy2Icon" src="images/timmy2.jpg" onclick="play('timmy2')" width="150px" height="150px">
-    <audio id="timmy2" src="sons/timmy2.mp3"></audio>  
-
-
-    <img class="iconSound" id="timmy3Icon" src="images/timmy3.jpg" onclick="play('timmy3')" width="150px" height="150px">
+    <img class="iconSound" id="timmy3Icon" src="images/timmy3.jpg" onclick="play('timmy3')">
     <audio id="timmy3" src="sons/timmy3.mp3"></audio>
-    
-    <img class="iconSound" id="brochetIcon" src="images/brochet.jpg" onclick="play('brochet')" width="150px" height="150px">
-    <audio id="brochet" src="sons/parce-que-c-39-est-notre-projet.mp3"></audio>      
 
+    <img class="iconSound" id="brochetIcon" src="images/brochet.jpg" onclick="play('brochet')">
+    <audio id="brochet" src="sons/parce-que-c-39-est-notre-projet.mp3"></audio>
+
+    <img class="iconSound" id="codeCulIcon" src="images/codeCul.jpg" onclick="play('codeCul')">
+    <audio id="codeCul" src="sons/je-code-avec-le-cul.mp3"></audio>
+
+    <img class="iconSound" id="ahIcon" src="images/ah.png" onclick="play('ah')">
+    <audio id="ah" src="sons/ah.mp3"></audio>
+
+    <img class="iconSound" id="echelleIcon" src="images/echelle.jpg" onclick="play('echelle')">
+    <audio id="echelle" src="sons/south-park-si-lechelle-cest-ma-bite.mp3"></audio>
 </div>
 
-<center><img src="images/will.gif" width="600px" height="500px"/><img src="images/wolf.gif" height="500px" width="600px"/></center>
+<center><img src="images/will.gif" width="600px" height="500px"/><img src="images/wolf.gif" height="500px" width="600px"/>
+</center>
 
 </body>
 </html>
